@@ -7,13 +7,13 @@ import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
-  <Router>
+  <Router basename={'/belrm'}>
     <div>
       <Link to={"/app"}>
         It is a link
       </Link>
-      <Route exact path={"/app"} component={App} />
-      <Route exact path={"/"} component={() => <div>yash</div>} />
+      <Route exact path={`${process.env.PUBLIC_URL}/app`} component={App} />
+      <Route exact path={`${process.env.PUBLIC_URL}/`} component={() => <div>yash</div>} />
     </div>
   </Router>, document.getElementById('root'));
 registerServiceWorker();
